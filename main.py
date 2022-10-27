@@ -3,6 +3,7 @@
 
 import os
 
+volba = input("[1] = Obyčejné používání\n[2] = My Summer Car\n\n")
 
 # Vrátí list všech souborů v složce programu 
 vsechny_soubory = os.listdir("./MP3")
@@ -19,6 +20,17 @@ if mp3 == []:
     print("Nenalezeny žádné MP3 soubory!") 
 
 # Spústí program ffmpeg.exe a přeconvertuje soubory mp3 na soubory ogg
-for zvukovy_soubor in mp3:
-    os.system(f"ffmpeg.exe -i MP3/\"{zvukovy_soubor}.mp3\" OGG/\"{zvukovy_soubor}.ogg\"")
-    
+if volba == "1":
+    for zvukovy_soubor in mp3:
+        os.system(f"ffmpeg.exe -i MP3/\"{zvukovy_soubor}.mp3\" OGG/\"{zvukovy_soubor}.ogg\"")
+
+
+elif volba == "2":
+    navysovani = 1
+    for zvukovy_soubor in mp3:
+        os.system(f"ffmpeg.exe -i MP3/\"{zvukovy_soubor}.mp3\" OGG/\"track{str(navysovani)}.ogg\"")
+        navysovani = navysovani + 1
+else:
+    print("Neplatný výběr!")
+
+input("\n\nZmáčkni ENTER pro ukončení")
