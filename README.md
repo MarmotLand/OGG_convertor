@@ -11,8 +11,7 @@ MP3 --> OGG
 
 - Obyčejné užití = zachová jména zvukových souborů
 
-- My Summer Car = přejmenuje zvukové soubory od Track1 až do uživatelem zvoleného počtu lze použít do hry My Summer car kde tyto soubory vkládáte do složky RADIO nebo CD
-a poté si je lze přehrávat přímo ve hře
+- My Summer Car = přejmenuje zvukové soubory od Track1 až do uživatelem zvoleného počtu, lze použít do hry My Summer car kde tyto soubory vkládáte do složky RADIO nebo CD, poté si je lze přehrávat přímo ve hře
 
 ![unknown](https://user-images.githubusercontent.com/116846191/198405358-6c00bff8-a138-45a9-919e-f8bfde6ea1e0.png)
 
