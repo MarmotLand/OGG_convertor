@@ -23,10 +23,14 @@ if mp3 == []:
 # Spustí program ffmpeg.exe a přeconvertuje soubory mp3 na soubory ogg
 
 itemu_celkem = str(len(mp3))  # počet mp3 souborů v listu (vypisování postupu)
+
 navysovani = 1
 
-print("\nCTRL+C pro ukončení\n\nPostup:")
+
+
+
 if volba == "1":
+    print("\nCTRL+C pro ukončení\n\nPostup:")
     for zvukovy_soubor in mp3:
         os.system(f"ffmpeg.exe -y -hide_banner -loglevel error -i ./MP3/\"{zvukovy_soubor}.mp3\" ./OGG/\"{zvukovy_soubor}.ogg\"")  # přepínač -y je pro overwrite
         
@@ -34,11 +38,19 @@ if volba == "1":
         navysovani = navysovani + 1
 
 elif volba == "2":
+    navysovaniMSC = input("Zadej startovní číslo (1): ")
+    if not navysovaniMSC.isdecimal():
+        navysovaniMSC = 1
+    else:
+        navysovaniMSC = int(navysovaniMSC)
+    print("\nCTRL+C pro ukončení\n\nPostup:")
+    
     for zvukovy_soubor in mp3:
-        os.system(f"ffmpeg.exe -y -hide_banner -loglevel error -i ./MP3/\"{zvukovy_soubor}.mp3\" ./OGG/\"track{str(navysovani)}.ogg\"")
+        os.system(f"ffmpeg.exe -y -hide_banner -loglevel error -i ./MP3/\"{zvukovy_soubor}.mp3\" ./OGG/\"track{str(navysovaniMSC)}.ogg\"")
         
         print(f"Hotovo {navysovani}/{itemu_celkem}")
         navysovani = navysovani + 1
+        navysovaniMSC = navysovaniMSC + 1
 else:
     print("Neplatný výběr!")
 
